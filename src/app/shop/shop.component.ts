@@ -15,19 +15,36 @@ import { ProductRepository } from '../model/product.repostory';
 })
 export class ShopComponent {
     public selectedCategory:Category | undefined = undefined;
+   public productPerPage = 3;
+   public selectedPage = 1;
   constructor(
     private productRepository: ProductRepository,
     private categoryRepository: CategoryRepository
   ) {}
 
   get products(): Product[] {
-    return this.productRepository.getProducts();
-  }
+    let index = (this.selectedPage-1)* this.productPerPage;
+    //0*3 =>0
+    //1*3 =>3
+    return this.productRepository
+    .getProducts(this.selectedCategory)
+    .slice(index,index + this.productPerPage);
 
+  }
+  get pageNumbers():number[]{
+   return Array(
+    Math.ceil(this.productRepository
+    .getProducts(this.selectedCategory).length/this.productPerPage)) //diinin kaç elemanlı oldugunu hesapladık 
+    .fill(0)//dizi elemanına başlangıçta 0 değerini attık
+    .map((a:any,i:any) => i +1);//her bir elemanı dolaşıyoruz elemanın index numarasının dizi olarak geri dönderiyoruz
+  }
+  changePage(p:number){
+    this.selectedPage = p;
+  }
   get categories(): Category[] {
     return this.categoryRepository.getCategories();
   }
-  CahngedCategory(newCategory?: Category | undefined){
+  ChangedCategory(newCategory?: Category | undefined){
     this.selectedCategory = newCategory;
   }
 }
