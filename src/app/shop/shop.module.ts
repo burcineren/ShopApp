@@ -5,12 +5,14 @@ import { ModelModule } from "../model/model.module";
 import { ShopComponent } from "./shop.component";
 import { NavbarComponent } from './navbar/navbar.component';
 import { CartSummaryComponent } from './cart-summary/cart-summary.component';
+import { CartDetailComponent } from './cart-detail/cart-detail.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
     imports:[ModelModule, BrowserModule, FormsModule],
     providers: [],
-    declarations: [ShopComponent, NavbarComponent, CartSummaryComponent], // componenet tanımlamaları
-    exports: [ShopComponent]
+    declarations: [ShopComponent, NavbarComponent, CartSummaryComponent, CartDetailComponent, CheckoutComponent], // componenet tanımlamaları
+    exports: [ShopComponent,CartDetailComponent,CartSummaryComponent,CheckoutComponent]
 })
 export class ShopModule {
 
