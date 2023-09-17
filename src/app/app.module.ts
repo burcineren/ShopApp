@@ -16,6 +16,7 @@ import { ShopModule } from './shop/shop.module';
   imports: [
     BrowserModule,
     ShopModule,
+    
     RouterModule.forRoot([
       {path: 'shop', component: ShopComponent},
       {path: 'cart', component: CartDetailComponent},

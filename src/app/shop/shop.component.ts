@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cart } from '../model/cart.model';
 import { Category } from '../model/category.model';
 import { CategoryRepository } from '../model/category.repostory';
@@ -8,11 +9,7 @@ import { ProductRepository } from '../model/product.repostory';
 @Component({
   selector: 'shop',
   templateUrl: 'shop.component.html',
-  styles: [`
-    .pt-100 {
-        padding-top:100px;
-    }
-  `]
+  styles: []
 })
 export class ShopComponent {
     public selectedCategory:Category | undefined = undefined;
@@ -21,7 +18,8 @@ export class ShopComponent {
   constructor(
     private productRepository: ProductRepository,
     private categoryRepository: CategoryRepository,
-    private cart:Cart
+    private cart:Cart,
+    private router: Router
   ) {}
 
   get products(): Product[] {
@@ -51,5 +49,6 @@ export class ShopComponent {
   }
   addProductToCart(product: Product) {
     this.cart.addItem(product);
+    this.router.navigateByUrl('/cart');//kullanıcıyı karta yönlendirdik
   }
 }
