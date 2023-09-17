@@ -10,7 +10,7 @@ export class CartDetailComponent implements OnInit {
 
   constructor(public cart: Cart ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

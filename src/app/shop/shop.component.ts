@@ -44,7 +44,7 @@ export class ShopComponent {
   get categories(): Category[] {
     return this.categoryRepository.getCategories();
   }
-  ChangedCategory(newCategory?: Category | undefined){
+  ChangedCategory(newCategory?: Category  | undefined){
     this.selectedCategory = newCategory;
   }
   addProductToCart(product: Product) {
