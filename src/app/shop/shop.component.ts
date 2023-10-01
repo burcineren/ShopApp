@@ -13,8 +13,9 @@ import { ProductRepository } from '../model/product.repostory';
 })
 export class ShopComponent {
     public selectedCategory:Category | undefined = undefined;
-   public productPerPage = 3;
+   public productPerPage = 2;
    public selectedPage = 1;
+   public selectedProducts = Product[] = [];
   constructor(
     private productRepository: ProductRepository,
     private categoryRepository: CategoryRepository,
@@ -26,9 +27,10 @@ export class ShopComponent {
     let index = (this.selectedPage-1)* this.productPerPage;
     //0*3 =>0
     //1*3 =>3
-    return this.productRepository
-    .getProducts(this.selectedCategory)
-    .slice(index,index + this.productPerPage);
+    this.selectedProducts = this.productRepository.getProducts(this.selectedCategory);
+
+    return this.selectedProducts
+      .slice(index,index + this.productPerPage);
 
   }
   get pageNumbers():number[]{
@@ -37,6 +39,10 @@ export class ShopComponent {
     .getProducts(this.selectedCategory).length/this.productPerPage)) //diinin kaç elemanlı oldugunu hesapladık 
     .fill(0)//dizi elemanına başlangıçta 0 değerini attık
     .map((a:any,i:any) => i +1);//her bir elemanı dolaşıyoruz elemanın index numarasının dizi olarak geri dönderiyoruz
+  }
+  changePageSize(size:number){
+    this.productPerPage = size;
+    this.changePage(1);
   }
   changePage(p:number){
     this.selectedPage = p;
