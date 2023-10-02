@@ -15,7 +15,7 @@ export class ShopComponent {
     public selectedCategory:Category | undefined = undefined;
    public productPerPage = 2;
    public selectedPage = 1;
-   public selectedProducts = Product[] = [];
+   public selectedProducts: Product[] = [];
   constructor(
     private productRepository: ProductRepository,
     private categoryRepository: CategoryRepository,
