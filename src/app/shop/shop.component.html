@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-3">
         <cart-summary></cart-summary>
-        <app-category-list [categories]="categories"></app-category-list>
+        <category-list [categories]="categories" (category)="getCategory($event)"></category-list>
      </div>
     <div class="col-9">
         <div class="row">

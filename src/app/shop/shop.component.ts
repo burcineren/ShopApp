@@ -12,7 +12,7 @@ import { ProductRepository } from '../model/product.repostory';
   styles: []
 })
 export class ShopComponent {
-    public selectedCategory:Category | undefined = undefined;
+  public selectedCategory:Category | undefined = undefined;
    public productPerPage = 2;
    public selectedPage = 1;
    public selectedProducts: Product[] = [];
@@ -49,6 +49,8 @@ export class ShopComponent {
   get categories(): Category[] {
     return this.categoryRepository.getCategories();
   }
- 
+  getCategory(category: Category) {
+    this.selectedCategory = category;
+  }
   
 }
