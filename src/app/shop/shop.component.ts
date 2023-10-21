@@ -19,8 +19,7 @@ export class ShopComponent {
   constructor(
     private productRepository: ProductRepository,
     private categoryRepository: CategoryRepository,
-    private cart:Cart,
-    private router: Router
+   
   ) {}
 
   get products(): Product[] {
@@ -50,11 +49,6 @@ export class ShopComponent {
   get categories(): Category[] {
     return this.categoryRepository.getCategories();
   }
-  ChangedCategory(newCategory?: Category  | undefined){
-    this.selectedCategory = newCategory;
-  }
-  addProductToCart(product: Product) {
-    this.cart.addItem(product);
-    this.router.navigateByUrl('/cart');//kullanıcıyı karta yönlendirdik
-  }
+ 
+  
 }
