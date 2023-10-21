@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { NgxsModule } from '@ngxs/store';
 
 import { AppComponent } from './app.component';
 import { CartDetailComponent } from './shop/cart-detail/cart-detail.component';
 import { CheckoutComponent } from './shop/checkout/checkout.component';
 import { ShopComponent } from './shop/shop.component';
 import { ShopModule } from './shop/shop.module';
+import { CountState } from './store/user/user.state';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { ShopModule } from './shop/shop.module';
   imports: [
     BrowserModule,
     ShopModule,
-    
+    NgxsModule.forRoot([
+      CountState
+    ]),
     RouterModule.forRoot([
       {path: 'shop', component: ShopComponent},
       {path: 'cart', component: CartDetailComponent},

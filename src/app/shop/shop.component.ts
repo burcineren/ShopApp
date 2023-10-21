@@ -16,6 +16,7 @@ export class ShopComponent {
    public productPerPage = 2;
    public selectedPage = 1;
    public selectedProducts: Product[] = [];
+   
   constructor(
     private productRepository: ProductRepository,
     private categoryRepository: CategoryRepository,
