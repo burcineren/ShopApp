@@ -10,6 +10,7 @@ import { Product } from 'src/app/model/product.model';
 })
 export class ProductListComponent implements OnInit {
   @Input() products: Product[] = [];
+   selectedProduct:Product | null = null;
   constructor(
     private cart:Cart,
     private router: Router
@@ -21,5 +22,10 @@ export class ProductListComponent implements OnInit {
     this.cart.addItem(product);
     this.router.navigateByUrl('/cart');//kullanıcıyı karta yönlendirdik
   }
-
+  displayDetails(product: Product) {
+    this.selectedProduct = product;
+  }
+  hideDetails() { 
+    this.selectedProduct = null;
+  }
 }
