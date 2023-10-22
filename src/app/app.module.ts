@@ -21,6 +21,7 @@ import { ShopModule } from './shop/shop.module';
       {path: 'shop', component: ShopComponent},
       {path: 'cart', component: CartDetailComponent},
       {path: 'checkout', component: CheckoutComponent},
+      {path: 'admin',loadChildren: () => import('./admin/admin.module').then(x => x.AdminModule) },
       {path: '**', redirectTo: "/shop"},
     ])
   ],
