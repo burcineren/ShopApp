@@ -8,7 +8,8 @@ import { CartDetailComponent } from './shop/cart-detail/cart-detail.component';
 import { CheckoutComponent } from './shop/checkout/checkout.component';
 import { ShopComponent } from './shop/shop.component';
 import { ShopModule } from './shop/shop.module';
-import { CountState } from './store/user/user.state';
+import { CounterState } from './store/user/counter.state'; // CounterState dosyanızın yolunu düzenleyin
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 
 @NgModule({
@@ -18,9 +19,8 @@ import { CountState } from './store/user/user.state';
   imports: [
     BrowserModule,
     ShopModule,
-    NgxsModule.forRoot([
-      CountState
-    ]),
+    NgxsModule.forRoot([CounterState]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
     RouterModule.forRoot([
       {path: 'shop', component: ShopComponent},
       {path: 'cart', component: CartDetailComponent},

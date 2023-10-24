@@ -1,23 +1,32 @@
 import { Component } from '@angular/core';
-import { CountState } from './store/user/user.state';
-import { Increment, Decrement } from './store/user/user.action';
+import { CounterState } from './store/user/counter.state';
+import { Increment, Decrement } from './store/user/counter.action';
+// import { Increment, Decrement } from './store/user/user.action';
 import { Observable } from 'rxjs';
 import { Dispatch } from '@ngxs-labs/dispatch-decorator'
-import { Select } from '@ngxs/store';
+import { Select, Store } from '@ngxs/store';
 
 @Component({
   selector: 'root',
-  template: `
-  <p>
-    NGXS counter: {{ count$ | async }}
-    <button (click)="increment()">+</button>
-    <button (click)="decrement()">-</button>
-  </p>
+  template:  `
+  <div>
+    <h1>Sayaç Değeri: {{ count | async }}</h1>
+    <button (click)="increment()">Artır</button>
+    <button (click)="decrement()">Azalt</button>
+  </div>
 `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @Select(CountState) count$: Observable<number>;
-  @Dispatch() public increment = () => new Increment();
-  @Dispatch() public decrement = () => new Decrement();
+  @Select(CounterState.getCount) count?: Observable<number>;
+
+  constructor(private store: Store) {}
+
+  increment() {
+    this.store.dispatch(new Increment());
+  }
+
+  decrement() {
+    this.store.dispatch(new Decrement());
+  }
 }
