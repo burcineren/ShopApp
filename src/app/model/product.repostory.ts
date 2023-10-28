@@ -18,17 +18,19 @@ export class ProductRepository implements OnInit {
     }
 
     getProduct(id: number):  Product | undefined {
-        return this.products.find(i => i.id === id);
+        return this.products.find(i => i.id == id);
     }
 
-    getProducts(category: Category | undefined): Product[] {
+    getProducts(category: Category | null = null): Product[] {
       console.log("testttt:",category);
       
-        if(category) 
-        
-        return this.products.filter(p => p.category == category.name);
-       else
-        return this.products;
+        if(category) {
+            return this.products.filter(p => p.category == category.name);
+        }
+       else{
+          return this.products;
+       }
+      
         }
 
 
