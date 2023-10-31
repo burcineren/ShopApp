@@ -38,7 +38,7 @@ export class RestService {
     });
   }
   authentication (username: string, password: string): Observable<boolean> {
-    return this.http.post<any>(this.baseUrl + 'login',{
+    return this.http.put<any>(this.baseUrl + 'login',{
       username: username,
       password: password
     }).pipe(map(response => {
