@@ -23,7 +23,7 @@ export class ProductFormComponent implements OnInit {
   ngOnInit(): void {
   }
   save(form: NgForm){
-    this.repository.saveProduct(this.product);
+    this.repository.saveProduct(this.product );
     this.router.navigateByUrl('/admin/main/products');
   }
 }
