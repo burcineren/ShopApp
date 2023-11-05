@@ -15,5 +15,6 @@ export class AuthService{
     }
     clear() {
         this.restService.token = null;
+       
     }
 }

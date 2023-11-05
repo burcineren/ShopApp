@@ -68,11 +68,12 @@ export class RestService {
   
   }
   authentication (username: string, password: string): Observable<boolean> {
-    return this.http.put<any>(this.baseUrl + 'login',{
+    return this.http.post<any>(this.baseUrl + 'login',{
       username: username,
       password: password
     }).pipe(map(response => {
       this.token = response.success ? response.token : null;
+     
       console.log(this.token);
       return response.success;
     }))

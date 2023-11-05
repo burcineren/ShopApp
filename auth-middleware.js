@@ -5,8 +5,9 @@ const username = "admin";
 const password = "secret";
 
 module.exports = function (req, res, next) {
-
+    console.log("first:::")
     if (req.url === '/login' && req.method == 'POST') {
+       
         if (req.body.username == username && req.body.password == password) {
             let token = jwt.sign({ data: username, expiresIn: '1h' }, app_secret);
             res.json({ success: true, token: token });
@@ -17,6 +18,7 @@ module.exports = function (req, res, next) {
         return;
     } else {
         if ((req.url.startsWith("/products") || req.url.startsWith("/categories")) && (req.method != 'GET')) {
+           
             let token = req.headers['authorization'];
 
             if (token != null && token.startsWith('Bearer<')) {
