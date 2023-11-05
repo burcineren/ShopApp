@@ -10,6 +10,7 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { ProductFormComponent } from './products/product-form/product-form.component';
 import { CategoryFormComponent } from './categories/category-form/category-form.component';
 import { OrderListComponent } from './orders/order-list/order-list.component';
+import { CategoryListComponent } from './categories/category-list/category-list.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { OrderListComponent } from './orders/order-list/order-list.component';
     ProductListComponent,
     ProductFormComponent,
     CategoryFormComponent,
+    CategoryListComponent,
     OrderListComponent,
 
   ],
