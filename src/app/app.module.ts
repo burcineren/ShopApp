@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
+import { TuiRootModule } from '@taiga-ui/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { AppComponent } from './app.component';
 import { CartDetailComponent } from './shop/cart-detail/cart-detail.component';
 import { CheckoutComponent } from './shop/checkout/checkout.component';
@@ -16,6 +17,8 @@ import { ShopModule } from './shop/shop.module';
   imports: [
     BrowserModule,
     ShopModule,
+    TuiRootModule,
+    BrowserAnimationsModule,
     
     RouterModule.forRoot([
       {path: 'shop', component: ShopComponent},
