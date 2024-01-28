@@ -10,11 +10,11 @@ import { ProductRepository } from '../model/product.repostory';
 @Component({
   selector: 'shop',
   templateUrl: 'shop.component.html',
-  standalone: true,
-  imports: [
-    TuiRootModule,
-    // ...
-  ],
+  // standalone: true,
+  // imports: [
+  //   TuiRootModule,
+  //   // ...
+  // ],
 })
 export class ShopComponent {
   public selectedCategory:Category | undefined = undefined;
