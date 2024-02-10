@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { TuiRootModule } from '@taiga-ui/core';
 import { Cart } from '../model/cart.model';
 import { Category } from '../model/category.model';
 import { CategoryRepository } from '../model/category.repostory';
@@ -11,10 +10,6 @@ import { ProductRepository } from '../model/product.repostory';
   selector: 'shop',
   templateUrl: 'shop.component.html',
   // standalone: true,
-  // imports: [
-  //   TuiRootModule,
-  //   // ...
-  // ],
 })
 export class ShopComponent {
   public selectedCategory:Category | undefined = undefined;
