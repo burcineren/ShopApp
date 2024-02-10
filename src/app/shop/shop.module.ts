@@ -10,6 +10,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { RouterModule } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CategoryListComponent } from './category-list/category-list.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   imports: [ModelModule, BrowserModule, FormsModule, RouterModule],
@@ -22,6 +23,7 @@ import { CategoryListComponent } from './category-list/category-list.component';
     CheckoutComponent,
     ProductListComponent,
     CategoryListComponent,
+    CarouselComponent,
   ], // componenet tanımlamaları
   exports: [ShopComponent, CartDetailComponent, CheckoutComponent],
 })
