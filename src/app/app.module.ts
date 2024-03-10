@@ -7,6 +7,7 @@ import { ShopModule } from './shop/shop.module';
 import { CartDetailComponent } from './shop/cart-detail/cart-detail.component';
 import { CheckoutComponent } from './shop/checkout/checkout.component';
 import { ShopComponent } from './shop/shop.component';
+import { ProductsComponent } from './shop/products/products.component';
 
 
 
@@ -23,6 +24,7 @@ import { ShopComponent } from './shop/shop.component';
       {path: 'shop', component: ShopComponent},
       {path: 'cart', component: CartDetailComponent},
       {path: 'checkout', component: CheckoutComponent},
+      {path: 'products', component: ProductsComponent},
       {path: 'admin',loadChildren: () => import('./admin/admin.module').then(x => x.AdminModule) },
       {path: '**', redirectTo: "/shop"},
     ])
