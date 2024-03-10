@@ -5,7 +5,7 @@ import { ModelModule } from '../model/model.module';
 import { ShopComponent } from './shop.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CartSummaryComponent } from './cart-summary/cart-summary.component';
-import { CartDetailComponent } from './cart-detail/cart-detail.component';
+import { CartDetailComponent } from './cart-detail/shoping-area.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RouterModule } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';

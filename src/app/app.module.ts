@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { AppComponent } from './app.component';
 import { ShopModule } from './shop/shop.module';
-import { CartDetailComponent } from './shop/cart-detail/cart-detail.component';
+import { CartDetailComponent } from './shop/cart-detail/shoping-area.component';
 import { CheckoutComponent } from './shop/checkout/checkout.component';
 import { ShopComponent } from './shop/shop.component';
 import { ProductsComponent } from './shop/products/products.component';
